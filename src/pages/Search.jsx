@@ -26,12 +26,6 @@ export default class Search extends Component {
     return checkInput;
   };
 
-  //  this.setState(() => ({
-
-  //    textSearch: `Resultado de álbuns de: ${inputValue}`,
-  //    setBusca: albuns.filter((album) => album.artistName.includes(inputValue)),
-  //  }));
-
   searchAlbum = async () => {
     const { inputValue } = this.state;
     this.setState({ loading: true });
