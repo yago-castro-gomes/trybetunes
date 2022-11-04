@@ -43,7 +43,6 @@ export default class Search extends Component {
       textSearch: `Resultado de álbuns de: ${inputValue}`,
       inputValue: '',
     }));
-    console.log(await searchAlbumsAPI('Gabo'));
   };
 
   render() {
