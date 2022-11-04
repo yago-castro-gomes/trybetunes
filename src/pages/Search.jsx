@@ -10,7 +10,6 @@ export default class Search extends Component {
     loading: '',
     albuns: [],
     textSearch: '',
-    setBusca: [],
   };
 
   onInputChange = (event) => {
@@ -46,7 +45,7 @@ export default class Search extends Component {
   };
 
   render() {
-    const { inputValue, loading, albuns, textSearch, setBusca } = this.state;
+    const { inputValue, loading, albuns, textSearch } = this.state;
     return (
       <div data-testid="page-search">
         <Header />
