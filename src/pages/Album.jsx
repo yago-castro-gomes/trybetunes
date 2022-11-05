@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
@@ -20,32 +21,41 @@ export default class Album extends Component {
     const music = await getMusics(id);
     this.setState({
       artistName: music[0],
-      arrayTracks: music,
+      arrayTracks: music.slice(1),
     });
-    console.log(music);
   };
 
   render() {
     const { artistName, arrayTracks } = this.state;
     return (
-      <div data-testid="page-album">
-        <Header />
-        Album
-        <div>
-          <br />
-          <br />
-          <img src={ artistName.artworkUrl100 } alt={ artistName } />
-          <p data-testid="album-name">{ artistName.collectionName }</p>
-          <h2 data-testid="artist-name">
-            { artistName.artistName }
-          </h2>
-          { arrayTracks.map((music) => (<MusicCard
-            key={ music.trackCensoredName }
-            musicName={ music.trackCensoredName }
-            previewUrl={ music.previewUrl }
-          />)) }
+      <div>
+        <div data-testid="page-album">
+          <Header />
+          Album
+          <div>
+            <img src={ artistName.artworkUrl100 } alt={ artistName.artistName } />
+            <p data-testid="album-name">{ artistName.collectionName }</p>
+            <h2 data-testid="artist-name">
+              { artistName.artistName }
+            </h2>
+            { arrayTracks.map((music) => (<MusicCard
+              data-testid="audio-component"
+              key={ music.trackCensoredName }
+              musicName={ music.trackName }
+              previewUrl={ music.previewUrl }
+            />)) }
+          </div>
         </div>
+
       </div>
     );
   }
 }
+
+Album.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
+};
