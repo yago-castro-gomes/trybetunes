@@ -23,7 +23,6 @@ export default class Album extends Component {
       artistName: music[0],
       arrayTracks: music.slice(1),
     });
-    console.log(music);
   };
 
   render() {

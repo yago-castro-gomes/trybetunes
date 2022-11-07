@@ -1,12 +1,28 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Loading from '../pages/Loading';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 export default class MusicCard extends Component {
   state = {
     check: false,
     loading: false,
+  };
+
+  componentDidMount() {
+    this.returnFavs();
+  }
+
+  favoriteSong = async () => {
+    const { check } = this.state;
+    if (!check) {
+      const { musicName, previewUrl, trackId } = this.props;
+      await addSong({ musicName, previewUrl, trackId });
+    }
+    this.setState({
+      loading: false,
+      check: true,
+    });
   };
 
   onInputChange = (event) => {
@@ -18,15 +34,15 @@ export default class MusicCard extends Component {
     });
   };
 
-  favoriteSong = async () => {
-    const { check } = this.state;
-    if (!check) {
-      const { musicName, previewUrl, trackId } = this.props;
-      await addSong({ musicName, previewUrl, trackId });
-    }
-    this.setState({
-      loading: false,
-      check: true,
+  returnFavs = async () => {
+    const { trackId } = this.props;
+    const getFav = await getFavoriteSongs();
+    getFav.forEach((idTrack) => {
+      if (trackId === idTrack.trackId) {
+        this.setState(({
+          check: true,
+        }));
+      }
     });
   };
 
