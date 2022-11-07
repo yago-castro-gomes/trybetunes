@@ -23,6 +23,7 @@ export default class Album extends Component {
       artistName: music[0],
       arrayTracks: music.slice(1),
     });
+    console.log(music);
   };
 
   render() {
@@ -43,6 +44,7 @@ export default class Album extends Component {
               key={ music.trackCensoredName }
               musicName={ music.trackName }
               previewUrl={ music.previewUrl }
+              trackId={ music.trackId }
             />)) }
           </div>
         </div>
