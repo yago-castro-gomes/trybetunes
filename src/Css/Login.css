@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.login {
+  align-items: center;
+  background-color: #eae8eb;
+  border: solid white;
+  box-shadow: #bab9bd 1px 2px 5px 2px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0% 30% 20%;
+}
+
+.logotunes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 30px;
+}
+
+h3 {
+  display: flex;
+  top: 35%;
+  color: #0b041a;
+  font-size: xx-large;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 100;
+}
+
+#nameInput {
+    font-size: 30px;
+    width: 50vh;
+    height: 6vh;
+    background-color: #eae8eb;
+    border-top: 0px;
+    /* border-left: 0px; */
+    animation: blinkCursor 0.8s infinite normal;
+    border-right: 0px;
+}
+
+#nameInput:focus {
+    outline: none;
+    border-left: none;
+    animation: none;
+    border-color: #763052;
+}
+
+button {
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color:#0b041a;
+    color: #eae8eb;
+    padding: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+@keyframes blinkCursor {
+
+  from {
+        border-left-color: #763052;
+        border-left-width: 0.2px;
+    }
+    to {
+        border-left: transparent;
+    }
+}

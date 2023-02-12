@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import '../Css/MusicCard.css';
 
 export default class Album extends Component {
   state = {
@@ -31,20 +32,23 @@ export default class Album extends Component {
       <div>
         <div data-testid="page-album">
           <Header />
-          Album
-          <div>
-            <img src={ artistName.artworkUrl100 } alt={ artistName.artistName } />
-            <p data-testid="album-name">{ artistName.collectionName }</p>
-            <h2 data-testid="artist-name">
-              { artistName.artistName }
-            </h2>
-            { arrayTracks.map((music) => (<MusicCard
-              data-testid="audio-component"
-              key={ music.trackCensoredName }
-              musicName={ music.trackName }
-              previewUrl={ music.previewUrl }
-              trackId={ music.trackId }
-            />)) }
+          <div className="albumcontent">
+            <div className="facealbum">
+              <img src={ artistName.artworkUrl100 } alt={ artistName.artistName } className="albumImage" />
+              <p data-testid="album-name">{ artistName.collectionName }</p>
+              <h2 data-testid="artist-name" className="nameBand">
+                { artistName.artistName }
+              </h2>
+            </div>
+            <div className="musicContent">
+              { arrayTracks.map((music) => (<MusicCard
+                data-testid="audio-component"
+                key={ music.trackCensoredName }
+                musicName={ music.trackName }
+                previewUrl={ music.previewUrl }
+                trackId={ music.trackId }
+              />)) }
+            </div>
           </div>
         </div>
 

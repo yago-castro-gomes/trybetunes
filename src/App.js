@@ -7,12 +7,12 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import './Css/App.css';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <p> TrybeTunes </p>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={ Login } />

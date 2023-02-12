@@ -1,0 +1,42 @@
+.nameBand {
+}
+
+.albumcontent {
+   display: flex;
+}
+
+
+.albumImage{
+    margin-top: 80px;
+    width: 200px;
+    height: 200px;
+}
+.facealbum{
+    text-align: center;
+    border-radius: 20px;
+    padding: 100px;
+    margin-left: 50px;
+    margin-top: 50px;
+    justify-content: center;
+    background: #dcdcf1;
+    background: -webkit-linear-gradient(0deg, #dcdcf1 0%, #fbf4ff 100%);
+    background: linear-gradient(0deg, #dcdcf1 0%, #fbf4ff 100%);
+    margin-bottom: 750px;
+}
+
+.musicContent {
+    background: #dcdcf1;
+    background: -webkit-linear-gradient(0deg, #dcdcf1 0%, #fbf4ff 100%);
+    background: linear-gradient(0deg, #dcdcf1 0%, #fbf4ff 100%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 50px;
+    margin-right: 30px;
+}
+.itensMusic {
+    margin: 50px;
+}

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Loading from '../pages/Loading';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import '../Css/MusicCard.css';
 
 export default class MusicCard extends Component {
   state = {
@@ -58,30 +59,34 @@ export default class MusicCard extends Component {
     const { loading, check } = this.state;
     return (
       <div>
-        { loading ? (<Loading />) : (
-          <div>
-            <h3>
-              { musicName }
-            </h3>
-            <audio data-testid="audio-component" src={ previewUrl } controls>
-              <track kind="captions" />
-              O seu navegador não suporta o elemento
-              <code>audio</code>
-            </audio>
-            <label htmlFor={ trackId }>
-              <input
-                type="checkbox"
-                name="favorita"
-                id={ trackId }
-                checked={ check }
-                onChange={ this.onInputChange }
-                data-testid={ `checkbox-music-${trackId}` }
-                onClick={ this.favoriteSong }
-              />
-              Favorita
-            </label>
-          </div>
-        )}
+        <div>
+          { loading ? (<Loading />) : (
+            <div className='itensMusic'>
+              <h5>
+                { musicName }
+              </h5>
+              <audio data-testid="audio-component" src={ previewUrl } controls>
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                <code>audio</code>
+              </audio>
+              <span>
+                <label htmlFor={ trackId }>
+                  <input
+                    type="checkbox"
+                    name="favorita"
+                    id={ trackId }
+                    checked={ check }
+                    onChange={ this.onInputChange }
+                    data-testid={ `checkbox-music-${trackId}` }
+                    onClick={ this.favoriteSong }
+                  />
+                  Favorita
+                </label>
+              </span>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

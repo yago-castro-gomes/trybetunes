@@ -1,0 +1,41 @@
+.head {
+  align-items: center;
+  /* background-color: #eae8eb; */
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  padding: 5px;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  filter: drop-shadow(2px 2px 2px #000003);
+  margin-left: 35px;
+  margin-top: 20px;
+  /* border: 0px solid black;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 0.8);
+  padding: 5px; */
+}
+
+.iconUser {
+  position: relative;
+  margin-right: 15px;
+}
+
+.head div {
+  margin-right: 35px;
+}
+
+
+
+
+/* .logo {
+    width: 10px;
+    height: 10px;
+} */
